@@ -7,20 +7,28 @@ const navLinks = [
   { href: '/catering', label: 'Catering' },
   { href: '/private-events', label: 'Private Events' },
   { href: '/contact', label: 'Contact' },
-  { href: '/order-online', label: 'Order Online' },
+  { href: '/order-online', label: 'Bestellen' },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-40 border-b border-gray-100 bg-white/95 backdrop-blur">
+<header class="sticky top-0 z-40 border-b border-white/60 bg-white/80 backdrop-blur-xl">
   <div class="container-wide flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
     <a href="/" class="text-lg font-semibold text-navy-800" aria-label="Brasserie Pizzeria Hama homepage">Brasserie Pizzeria Hama</a>
 
-    <nav aria-label="Main navigation" class="hidden items-center gap-6 md:flex">
+    <nav aria-label="Main navigation" class="hidden items-center gap-2 md:flex">
       {
         navLinks.map((link) => (
-          <a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined} class="text-sm font-medium text-gray-700 transition hover:text-sky-700">
+          <a
+            href={link.href}
+            aria-current={currentPath === link.href ? 'page' : undefined}
+            class={`rounded-full px-4 py-2 text-sm font-medium transition ${
+              currentPath === link.href
+                ? 'bg-sky-100 text-sky-800'
+                : 'text-gray-700 hover:bg-sky-50 hover:text-sky-700'
+            }`}
+          >
             {link.label}
           </a>
         ))
@@ -33,11 +41,19 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <nav id="mobile-menu" aria-label="Mobile navigation" class="hidden border-t border-gray-100 bg-white px-4 py-4 md:hidden">
-    <ul class="space-y-3">
+    <ul class="space-y-2">
       {
         navLinks.map((link) => (
           <li>
-            <a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined} class="block rounded-lg px-3 py-3 text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-700">
+            <a
+              href={link.href}
+              aria-current={currentPath === link.href ? 'page' : undefined}
+              class={`block rounded-xl px-4 py-3 text-sm font-medium ${
+                currentPath === link.href
+                  ? 'bg-sky-100 text-sky-800'
+                  : 'text-gray-700 hover:bg-sky-50 hover:text-sky-700'
+              }`}
+            >
               {link.label}
             </a>
           </li>

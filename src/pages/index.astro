@@ -34,10 +34,7 @@ const schema = {
         { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday', 'Saturday'], opens: '12:00', closes: '23:00' },
         { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '13:00', closes: '21:00' },
       ],
-      sameAs: [
-        'https://www.facebook.com/',
-        'https://www.instagram.com/',
-      ],
+      sameAs: ['https://www.facebook.com/', 'https://www.instagram.com/'],
       areaServed: 'Terneuzen and surrounding Zeeland region',
       hasMap: 'https://maps.google.com/?q=Axelsestraat+15,+4537+AA+Terneuzen',
     },
@@ -50,110 +47,63 @@ const schema = {
 };
 ---
 
-<BaseLayout title="Brasserie Pizzeria Hama | Restaurant Terneuzen" description="Brasserie Pizzeria Hama in Terneuzen serves fresh pizza, brasserie classics, catering, and private dining in a warm setting." schema={schema} ogImage="https://nawidh1.github.io/SEO/og/home.jpg">
-  <Hero title="Fresh Pizza and Brasserie Classics in Terneuzen" subtitle="At Brasserie Pizzeria Hama, Fresh Pizza and Brasserie Classics in Terneuzen are at the heart of every lunch, dinner, and gathering with friends or family." cta={{ label: 'Reserve Your Table Today', href: '/contact' }} ctaSecondary={{ label: 'Explore Full Menu Options', href: '/menu' }} />
+<BaseLayout title="Brasserie Pizzeria Hama | Restaurant Terneuzen" description="Modern brasserie and pizzeria in Terneuzen with dine-in, catering, and private events." schema={schema} ogImage="https://nawidh1.github.io/SEO/og/home.jpg">
+  <Hero title="Modern Brasserie and Pizzeria in Terneuzen" subtitle="Fresh pizza, quality classics, and a warm atmosphere for lunch, dinner, and group nights." cta={{ label: 'Book a Table', href: '/contact' }} ctaSecondary={{ label: 'See Menu', href: '/menu' }} />
 
-  <section class="section-padding">
+  <section class="section-padding -mt-6 lg:-mt-10">
     <div class="container-wide grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      <InfoCard label="Opening Hours" value="7 Days a Week" detail="Lunch and dinner service" />
+      <InfoCard label="Open" value="7 Days" detail="Lunch and dinner" />
       <InfoCard label="Address" value="Axelsestraat 15" detail="4537 AA Terneuzen" />
-      <InfoCard label="Phone" value="0115 691 219" detail="Call for reservations" />
-      <InfoCard label="Kitchen Focus" value="Pizza + Brasserie" detail="Freshly prepared each day" />
+      <InfoCard label="Phone" value="0115 691 219" detail="Fast reservation support" />
+      <InfoCard label="Service" value="Dine-in + Pickup" detail="Catering available" />
     </div>
   </section>
 
   <section class="section-padding bg-white">
     <div class="container-wide">
-      <SectionHeading title="Why Locals Choose Brasserie Pizzeria Hama" subtitle="We combine the comfort of a neighborhood brasserie with the flavor range of a quality pizzeria, so every guest can find a meal they genuinely enjoy." align="center" />
+      <SectionHeading title="What You Can Expect" subtitle="Simple menu choices, great flavor, and quick, friendly service." align="center" />
       <div class="mt-10 grid gap-6 md:grid-cols-3">
-        <Card title="Balanced Menu Variety" text="Our menu includes stone-baked pizza, hearty brasserie plates, lighter salads, and desserts, making group dining simple for mixed preferences." />
-        <Card title="Consistent Kitchen Standards" text="We focus on clean preparation, reliable portion quality, and careful timing so lunch breaks, family dinners, and event meals run smoothly." />
-        <Card title="Friendly Local Hospitality" text="Guests return for the welcoming atmosphere, practical service, and straightforward communication when booking, ordering, or planning events." />
+        <Card title="Signature Pizza" text="Stone-baked pizzas with classic and seasonal toppings." href="/menu" />
+        <Card title="Private Events" text="Flexible space for birthdays, team dinners, and celebrations." href="/private-events" />
+        <Card title="Catering" text="Reliable group food with easy planning and pickup options." href="/catering" />
       </div>
     </div>
   </section>
 
   <section class="section-padding">
-    <div class="container-wide grid gap-10 lg:grid-cols-2 items-center">
-      <article>
-        <h2 class="text-3xl">A Better Restaurant Experience in Terneuzen</h2>
-        <p class="mt-4 text-gray-700">Brasserie Pizzeria Hama is built for real local routines: relaxed weekday lunches, practical midweek dinners, and enjoyable weekend meals. Our team focuses on taste, timing, and comfort so each visit feels easy from the moment you enter. If you are searching for a dependable restaurant in Terneuzen where menu quality and service consistency both matter, our approach is designed with that goal in mind.</p>
-        <p class="mt-4 text-gray-700">We prepare pizza dough carefully, use balanced toppings, and cook brasserie favorites with attention to texture and flavor. That means crisp crusts, flavorful sauces, and dishes that feel complete rather than rushed. Families appreciate that children, teens, and adults can all choose something satisfying, while business guests value a clear menu and dependable turnaround during busy hours.</p>
-        <p class="mt-4 text-gray-700">Because the restaurant serves both everyday diners and special occasions, our team keeps communication simple. You can call for reservations, discuss catering, or ask about private events without complicated booking steps. This practical style is one reason Brasserie Pizzeria Hama has become a trusted choice for people across Terneuzen and the broader Zeeland area.</p>
-      </article>
-      <div class="rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50 to-warm-100 p-8 shadow-sm">
-        <h3 class="text-2xl">Featured This Week</h3>
-        <p class="mt-3 text-gray-700">Try our signature pizza selection paired with seasonal brasserie specials available Friday and Saturday evenings. These combinations are ideal for couples, groups, and family tables.</p>
-        <ul class="mt-4 space-y-2 text-sm text-gray-700">
-          <li>Chef-selected pizza toppings with fresh herbs</li>
-          <li>House dessert options for shared tables</li>
-          <li>Flexible seating for small and medium groups</li>
-        </ul>
-        <a href="/order-online" class="btn-primary mt-6">Start Pickup Order Flow</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-padding bg-white">
-    <div class="container-wide grid gap-10 lg:grid-cols-2">
-      <article>
-        <h2 class="text-3xl">Catering and Private Events</h2>
-        <p class="mt-4 text-gray-700">Beyond dine-in service, Brasserie Pizzeria Hama supports local events with practical catering and private dining options. If you are organizing a birthday, family celebration, business lunch, or community gathering, we can help with menu planning and service timing. Our goal is to make event food simple, tasty, and reliable so you can focus on your guests.</p>
-        <p class="mt-4 text-gray-700">Many event planners choose us because we provide broad menu flexibility. You can combine pizza favorites with brasserie dishes, include vegetarian options, and create balanced selections for mixed age groups. Visit our <a href="/catering" class="text-sky-700 hover:underline">catering service details</a> to review package ideas or use our <a href="/private-events" class="text-sky-700 hover:underline">private event planning page</a> to request date availability.</p>
-      </article>
-      <article>
-        <h2 class="text-3xl">Visit and Contact Information</h2>
-        <address class="not-italic mt-4 text-gray-700 space-y-1">
+    <div class="container-wide grid gap-6 lg:grid-cols-2">
+      <article class="animate-enter rounded-2xl border border-gray-100 bg-white p-7 shadow-sm">
+        <h2 class="text-3xl">Visit Us Today</h2>
+        <address class="not-italic mt-4 space-y-1 text-gray-700">
           <p>Brasserie Pizzeria Hama</p>
           <p>Axelsestraat 15, 4537 AA Terneuzen</p>
-          <p>Phone: <a href="tel:+31115691219" class="text-sky-700 hover:underline">0115 691 219</a></p>
-          <p>Email: <a href="mailto:info@hama-terneuzen.example" class="text-sky-700 hover:underline">info@hama-terneuzen.example</a></p>
+          <p><a class="text-sky-700 hover:underline" href="tel:+31115691219">0115 691 219</a></p>
         </address>
-        <p class="mt-4 text-gray-700">Need directions? Open our location in <a href="https://maps.google.com/?q=Axelsestraat+15,+4537+AA+Terneuzen" target="_blank" rel="noopener noreferrer" class="text-sky-700 hover:underline">Google Maps for route planning</a>. You can also discover local attractions through <a href="https://www.zeeland.com/en/visit" target="_blank" rel="noopener noreferrer" class="text-sky-700 hover:underline">the official Zeeland visitor guide</a> when planning a meal around your trip.</p>
-        <div class="mt-6 flex h-56 items-center justify-center rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 text-sm text-gray-500">Map placeholder - embed Google Map here</div>
-      </article>
-    </div>
-  </section>
-
-  <section class="section-padding">
-    <div class="container-wide grid gap-8 lg:grid-cols-3">
-      <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm lg:col-span-2">
-        <h2 class="text-3xl">Frequently Asked Questions</h2>
-        <div class="mt-6 space-y-5 text-gray-700">
-          <div>
-            <h3 class="text-xl">Do you accept reservations for groups?</h3>
-            <p class="mt-2">Yes. Call ahead for group reservations so we can prepare the best seating layout and recommend menu combinations for your party size.</p>
-          </div>
-          <div>
-            <h3 class="text-xl">Can I order online for pickup?</h3>
-            <p class="mt-2">Absolutely. Use our <a href="/order-online" class="text-sky-700 hover:underline">online ordering page</a> to start a pickup request. The final provider URL can be connected during deployment.</p>
-          </div>
-          <div>
-            <h3 class="text-xl">Do you offer options for different dietary needs?</h3>
-            <p class="mt-2">Yes. We provide vegetarian choices and can guide guests through suitable menu options for common dietary preferences.</p>
-          </div>
+        <div class="mt-5 flex h-44 items-center justify-center rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 text-sm text-gray-500">
+          Google Map embed placeholder
         </div>
       </article>
 
-      <aside class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-        <h2 class="text-2xl">Share This Page</h2>
-        <p class="mt-3 text-sm text-gray-700">Help more people discover Brasserie Pizzeria Hama in Terneuzen.</p>
-        <div class="mt-5 space-y-3">
-          <a class="btn-outline w-full" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=https://nawidh1.github.io/SEO/">Share on Facebook</a>
-          <a class="btn-outline w-full" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https://nawidh1.github.io/SEO/">Share on LinkedIn</a>
-          <a class="btn-outline w-full" target="_blank" rel="noopener noreferrer" href="https://wa.me/?text=Check%20out%20Brasserie%20Pizzeria%20Hama%20in%20Terneuzen%20https://nawidh1.github.io/SEO/">Share on WhatsApp</a>
+      <article class="animate-enter rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50 via-white to-warm-100 p-7 shadow-sm">
+        <h2 class="text-3xl">Quick Actions</h2>
+        <p class="mt-3 text-gray-700">Book, order, or share in seconds.</p>
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          <a href="/contact" class="btn-primary">Reserve Now</a>
+          <a href="/order-online" class="btn-outline">Bestel via Thuisbezorgd</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=https://nawidh1.github.io/SEO/" class="btn-outline">Share Facebook</a>
+          <a target="_blank" rel="noopener noreferrer" href="https://wa.me/?text=Brasserie%20Pizzeria%20Hama%20https://nawidh1.github.io/SEO/" class="btn-outline">Share WhatsApp</a>
         </div>
-      </aside>
+      </article>
     </div>
   </section>
 
   <section class="section-padding bg-white">
     <div class="container-narrow text-center">
-      <h2 class="text-3xl">Plan Your Next Meal at Hama</h2>
-      <p class="mt-3 text-gray-700">From casual pizza nights to complete event catering, Brasserie Pizzeria Hama offers practical service and strong flavor for guests across Terneuzen.</p>
+      <h2 class="text-3xl">Ready for Your Next Meal?</h2>
+      <p class="mt-3 text-gray-700">Enjoy quality pizza and brasserie favorites in a clean, modern setting.</p>
       <div class="mt-6 flex flex-col justify-center gap-4 sm:flex-row">
-        <a href="/contact" class="btn-primary">Request Reservation Assistance</a>
-        <a href="/menu" class="btn-outline">See Complete Food Selection</a>
+        <a href="/menu" class="btn-primary">Browse Menu</a>
+        <a href="https://maps.google.com/?q=Axelsestraat+15,+4537+AA+Terneuzen" target="_blank" rel="noopener noreferrer" class="btn-outline">Open in Google Maps</a>
       </div>
     </div>
   </section>
