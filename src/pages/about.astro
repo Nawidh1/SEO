@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+---
+
+<BaseLayout title="About Us | Brasserie Pizzeria Hama" description="Learn the story behind Brasserie Pizzeria Hama and our commitment to quality dining in Terneuzen." ogImage="https://hama-terneuzen.example.com/og/about.jpg">
+  <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'About', href: '/about' }]} />
+  <PageHero title="About Brasserie Pizzeria Hama" subtitle="A neighborhood restaurant serving Terneuzen with warmth, consistency, and quality." />
+  <section class="section-padding bg-white">
+    <div class="container-narrow space-y-5 text-gray-700">
+      <p>Brasserie Pizzeria Hama was built around one simple idea: combine the comfort of a local brasserie with the flavor and variety of an authentic pizzeria. Our team welcomes regular guests, families, and travelers looking for a dependable meal in a relaxed setting.</p>
+      <p>From hand-stretched dough to seasonal daily specials, we focus on fresh preparation and attentive hospitality. Whether you are stopping by for a quick lunch or a long dinner, we want every visit to feel easy and memorable.</p>
+    </div>
+  </section>
+</BaseLayout>

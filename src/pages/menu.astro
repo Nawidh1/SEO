@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+---
+
+<BaseLayout title="Menu | Brasserie Pizzeria Hama" description="Discover pizzas, pasta, salads, desserts, and drinks at Brasserie Pizzeria Hama in Terneuzen." ogImage="https://hama-terneuzen.example.com/og/menu.jpg">
+  <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Menu', href: '/menu' }]} />
+  <PageHero title="Our Menu" subtitle="Fresh ingredients, balanced flavors, and options for every appetite." />
+  <section class="section-padding">
+    <div class="container-wide grid gap-6 md:grid-cols-2">
+      <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl">Pizza Selection</h2>
+        <ul class="mt-4 space-y-2 text-sm text-gray-700">
+          <li>Margherita - tomato, mozzarella, basil</li>
+          <li>Hama Special - salami, mushrooms, peppers, onions</li>
+          <li>Vegetariana - grilled vegetables, olives, fresh herbs</li>
+          <li>Diavola - spicy salami, chili oil, mozzarella</li>
+        </ul>
+      </article>
+      <article class="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+        <h2 class="text-2xl">Brasserie Favorites</h2>
+        <ul class="mt-4 space-y-2 text-sm text-gray-700">
+          <li>Grilled chicken with seasonal vegetables</li>
+          <li>Steak frites with house sauce</li>
+          <li>Fresh fish of the day</li>
+          <li>Chef's pasta with local produce</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

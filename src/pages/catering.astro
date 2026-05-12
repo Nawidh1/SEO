@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How far in advance should we book catering?',
+      acceptedAnswer: { '@type': 'Answer', text: 'For best availability, we recommend booking 7 to 14 days in advance, especially for weekends.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you offer vegetarian and allergy-conscious options?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Our team can provide vegetarian options and help guide menu choices for common dietary needs.' },
+    },
+  ],
+};
+---
+
+<BaseLayout title="Catering | Brasserie Pizzeria Hama" description="Catering services for office lunches, birthdays, and family gatherings in Terneuzen and surrounding areas." schema={faqSchema} ogImage="https://hama-terneuzen.example.com/og/catering.jpg">
+  <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Catering', href: '/catering' }]} />
+  <PageHero title="Catering" subtitle="Fresh, crowd-friendly menus for business events, celebrations, and private gatherings." />
+  <section class="section-padding bg-white">
+    <div class="container-wide grid gap-8 lg:grid-cols-2">
+      <article class="rounded-xl border border-gray-100 p-6 shadow-sm">
+        <h2 class="text-2xl">Popular Catering Packages</h2>
+        <ul class="mt-4 space-y-2 text-gray-700 text-sm">
+          <li>Pizza and salad package for office teams</li>
+          <li>Mixed brasserie buffet for family celebrations</li>
+          <li>Custom menus for birthdays and milestones</li>
+        </ul>
+      </article>
+      <article class="rounded-xl border border-gray-100 p-6 shadow-sm">
+        <h2 class="text-2xl">How Catering Works</h2>
+        <ol class="mt-4 space-y-2 text-gray-700 text-sm list-decimal pl-4">
+          <li>Share your event date, guest count, and preferences.</li>
+          <li>We recommend a menu and confirm timing.</li>
+          <li>Pickup or delivery details are finalized before event day.</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

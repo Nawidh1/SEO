@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+---
+
+<BaseLayout title="Private Events | Brasserie Pizzeria Hama" description="Host birthdays, team dinners, and private celebrations at Brasserie Pizzeria Hama in Terneuzen." ogImage="https://hama-terneuzen.example.com/og/events.jpg">
+  <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Private Events', href: '/private-events' }]} />
+  <PageHero title="Private Events" subtitle="Flexible spaces and tailored menus for memorable group dining." />
+  <section class="section-padding">
+    <div class="container-narrow space-y-5 text-gray-700">
+      <p>Planning a birthday dinner, anniversary, or team gathering? Brasserie Pizzeria Hama offers a welcoming setting with customizable menu options for groups of different sizes.</p>
+      <p>Our team helps coordinate timing, seating, and menu preferences so your guests can relax and enjoy the evening. Contact us to discuss date availability and event details.</p>
+      <a href="/contact" class="btn-primary">Request Event Availability</a>
+    </div>
+  </section>
+</BaseLayout>

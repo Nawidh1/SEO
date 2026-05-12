@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+---
+
+<BaseLayout title="Order Online | Brasserie Pizzeria Hama" description="Order your favorite pizza and brasserie dishes online from Brasserie Pizzeria Hama." ogImage="https://hama-terneuzen.example.com/og/order.jpg">
+  <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Order Online', href: '/order-online' }]} />
+  <PageHero title="Order Online" subtitle="Place your pickup order through our online provider." />
+  <section class="section-padding bg-white">
+    <div class="container-narrow rounded-xl border border-gray-100 p-8 shadow-sm text-center">
+      <h2 class="text-2xl">Ready to Order?</h2>
+      <p class="mt-3 text-gray-700">Use our online ordering partner to choose your favorites and schedule pickup.</p>
+      <a href="#" class="btn-primary mt-6">Order Now</a>
+      <p class="mt-4 text-sm text-gray-500">Placeholder: replace this link with your delivery or POS ordering URL.</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,17 +1,112 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import InfoCard from '../components/InfoCard.astro';
+import Card from '../components/Card.astro';
 
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Restaurant',
+      name: 'Brasserie Pizzeria Hama',
+      url: 'https://hama-terneuzen.example.com',
+      telephone: '+31 115 691 219',
+      email: 'info@hama-terneuzen.example',
+      image: 'https://hama-terneuzen.example.com/images/restaurant-front.webp',
+      priceRange: '$$',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Axelsestraat 15',
+        addressLocality: 'Terneuzen',
+        addressRegion: 'Zeeland',
+        postalCode: '4537 AA',
+        addressCountry: 'NL',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 51.3349,
+        longitude: 3.8276,
+      },
+      openingHoursSpecification: [
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], opens: '12:00', closes: '22:00' },
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Friday', 'Saturday'], opens: '12:00', closes: '23:00' },
+        { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '13:00', closes: '21:00' },
+      ],
+      sameAs: [],
+      areaServed: 'Terneuzen and surrounding Zeeland region',
+      hasMap: 'https://maps.google.com/?q=Axelsestraat+15,+4537+AA+Terneuzen',
+    },
+    {
+      '@type': 'WebSite',
+      name: 'Brasserie Pizzeria Hama',
+      url: 'https://hama-terneuzen.example.com',
+    },
+  ],
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Brasserie Pizzeria Hama | Fresh Pizza and Brasserie Dining in Terneuzen" description="Enjoy wood-fired pizza, brasserie favorites, and warm hospitality at Brasserie Pizzeria Hama in Terneuzen." schema={schema} ogImage="https://hama-terneuzen.example.com/og/home.jpg">
+  <Hero title="Fresh Pizza and Brasserie Classics in Terneuzen" subtitle="Brasserie Pizzeria Hama welcomes families, friends, and visitors with handcrafted pizza, local flavors, and friendly service in the heart of Terneuzen." cta={{ label: 'Reserve a Table', href: '/contact' }} ctaSecondary={{ label: 'View Our Menu', href: '/menu' }} />
+
+  <section class="section-padding">
+    <div class="container-wide grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <InfoCard label="Opening Hours" value="Daily Service" detail="Lunch and dinner all week" />
+      <InfoCard label="Address" value="Axelsestraat 15" detail="4537 AA Terneuzen" />
+      <InfoCard label="Phone" value="0115 691 219" detail="Call for reservations" />
+      <InfoCard label="Specialty" value="Stone-Baked Pizza" detail="Made fresh to order" />
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-wide">
+      <SectionHeading title="What to Expect" subtitle="A relaxed dining experience with quality ingredients and attentive service from arrival to dessert." align="center" />
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <Card title="Choose Your Favorites" text="Explore classic pizzas, seasonal brasserie dishes, and house-made desserts prepared throughout the day." />
+        <Card title="Freshly Prepared" text="Our kitchen team prepares each order with care using fresh produce, quality cheeses, and balanced seasoning." />
+        <Card title="Enjoy and Return" text="Dine in a welcoming setting and come back for weekly specials, events, and family-friendly service." />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container-wide rounded-2xl bg-gradient-to-r from-sky-100 to-warm-100 p-8 sm:p-10">
+      <h2 class="text-3xl">Featured Offering: Hama Signature Pizza Night</h2>
+      <p class="mt-4 max-w-3xl text-gray-700">Every Friday and Saturday evening, enjoy chef-selected seasonal pizzas paired with local drinks. Perfect for date nights, family dinners, or casual group gatherings.</p>
+      <a href="/order-online" class="btn-primary mt-6">Order for Pickup</a>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-wide grid gap-8 lg:grid-cols-2">
+      <article>
+        <h2 class="text-3xl">Recent Guest Feedback</h2>
+        <div class="mt-6 space-y-4">
+          <blockquote class="rounded-xl border border-gray-100 bg-warm-50 p-5 shadow-sm">"Excellent pizza crust and very friendly staff. A dependable spot in Terneuzen for lunch and dinner."</blockquote>
+          <blockquote class="rounded-xl border border-gray-100 bg-warm-50 p-5 shadow-sm">"Great variety for groups and families. Service was quick, and the atmosphere was warm and welcoming."</blockquote>
+        </div>
+      </article>
+      <article>
+        <h2 class="text-3xl">Visit Us</h2>
+        <address class="not-italic mt-4 text-gray-700 space-y-1">
+          <p>Brasserie Pizzeria Hama</p>
+          <p>Axelsestraat 15, 4537 AA Terneuzen</p>
+          <p>Phone: <a href="tel:+31115691219" class="text-sky-700 hover:underline">0115 691 219</a></p>
+        </address>
+        <div class="mt-6 flex h-56 items-center justify-center rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 text-sm text-gray-500">Map placeholder - embed Google Map here</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl">Ready to Dine with Us?</h2>
+      <p class="mt-3 text-gray-700">Book your table, place a pickup order, or contact our team for catering and private event planning.</p>
+      <div class="mt-6 flex flex-col justify-center gap-4 sm:flex-row">
+        <a href="/contact" class="btn-primary">Book a Table</a>
+        <a href="/order-online" class="btn-outline">Order Online</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

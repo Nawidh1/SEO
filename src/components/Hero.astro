@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  cta: { label: string; href: string };
+  ctaSecondary: { label: string; href: string };
+  size?: 'default' | 'compact';
+}
+
+const { title, subtitle, cta, ctaSecondary, size = 'default' } = Astro.props;
+---
+
+<section class={`relative overflow-hidden bg-gradient-to-b from-sky-50 via-white to-warm-100 ${size === 'default' ? 'section-padding' : 'px-4 py-12 sm:px-6 lg:px-8 lg:py-16'}`}>
+  <div class="absolute -left-24 top-10 h-64 w-64 rounded-full bg-sky-100 blur-3xl" aria-hidden="true"></div>
+  <div class="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-warm-200 blur-3xl" aria-hidden="true"></div>
+
+  <div class="container-wide relative text-center">
+    <h1 class="text-4xl font-semibold sm:text-5xl">{title}</h1>
+    <p class="mx-auto mt-6 max-w-3xl text-base text-gray-700 sm:text-lg">{subtitle}</p>
+    <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+      <a href={cta.href} class="btn-primary">{cta.label}</a>
+      <a href={ctaSecondary.href} class="btn-outline">{ctaSecondary.label}</a>
+    </div>
+  </div>
+</section>
